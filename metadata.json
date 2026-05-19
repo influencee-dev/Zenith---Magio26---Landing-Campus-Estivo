@@ -1,0 +1,6 @@
+{
+  "name": "Campus Estivo Leopardi 2026",
+  "description": "Landing page per il Campus Estivo 2026 del Circolo Didattico G. Leopardi di Foggia. Sport, musica e laboratori.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

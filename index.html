@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Estivo Leopardi Foggia 2026 — Sport e Attività per Bambini</title>
+  <meta name="description" content="Campus Estivo Circolo Didattico G. Leopardi Foggia. Bambini 6-11 anni. Sport, musica, laboratori. €25/settimana. 10 Giugno – 31 Luglio. Iscrizioni entro il 30 maggio.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    :root {
+      --sky: #5BB8F5;
+      --sky-dark: #3A9FDF;
+      --sun: #FFD23F;
+      --green: #4CAF82;
+      --green-dark: #3A9668;
+      --coral: #FF6B6B;
+      --white: #FFFFFF;
+      --ink: #1A2B3C;
+      --soft: #F0F9FF;
+      --font-display: 'Baloo 2', cursive;
+      --font-body: 'Nunito', sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      color: var(--ink);
+      background-color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* --- LOGOS BAR --- */
+    .top-logos {
+      background: var(--white);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #eee;
+    }
+    .top-logos img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* --- HERO --- */
+    .hero {
+      background: linear-gradient(180deg, #87CEEB 0%, #5BB8F5 50%, #3A9FDF 100%);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      color: var(--white);
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--white);
+      color: var(--sky-dark);
+      padding: 0.5rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      opacity: 0; animation: fadeInUp 0.6s 0.2s forwards;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 10vw, 5rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+      opacity: 0; animation: fadeInUp 0.6s 0.4s forwards;
+    }
+    .hero-sub {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 600;
+      margin-bottom: 2rem;
+      opacity: 0; animation: fadeInUp 0.6s 0.6s forwards;
+    }
+    .hero-dates {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      opacity: 0; animation: fadeInUp 0.6s 0.8s forwards;
+    }
+
+    /* --- PRICE STRIP --- */
+    .price-strip {
+      background: var(--ink);
+      color: var(--white);
+      padding: 2rem 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .price-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .price-val {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--sun);
+      line-height: 1;
+    }
+    .price-label { font-size: 0.9rem; font-weight: 600; opacity: 0.8; }
+    .price-chip {
+      background: var(--coral);
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* --- COMMON SECTION --- */
+    section { padding: 5rem 1.5rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      color: var(--ink);
+    }
+
+    /* --- SCHEDULE --- */
+    .schedule-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      background: var(--white);
+      border-radius: 15px;
+      padding: 1.2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      border-left: 6px solid var(--sky);
+      gap: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .schedule-item:hover { transform: translateX(10px); }
+    .schedule-item:nth-child(2) { border-left-color: var(--green); }
+    .schedule-item:nth-child(3) { border-left-color: var(--sun); }
+    .schedule-item:nth-child(4) { border-left-color: var(--coral); }
+    .schedule-item:nth-child(5) { border-left-color: var(--sky-dark); }
+    .schedule-item:nth-child(6) { border-left-color: var(--green-dark); }
+
+    .schedule-time {
+      font-weight: 800;
+      color: var(--ink);
+      min-width: 100px;
+      font-size: 1.1rem;
+    }
+    .schedule-info { flex: 1; font-weight: 600; }
+    .schedule-icon { font-size: 1.5rem; color: var(--sky-dark); width: 30px; text-align: center; }
+
+    /* --- ACTIVITIES --- */
+    .activities-section { background: linear-gradient(135deg, #e0f2fe 0%, #f0fdf4 100%); }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .activity-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: all 0.3s;
+    }
+    .activity-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+    .activity-card i { font-size: 2.5rem; color: var(--sky); margin-bottom: 1rem; }
+    .activity-card h3 { font-family: var(--font-display); font-size: 1.4rem; }
+
+    .special-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .special-card {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      border: 2px dashed var(--sun);
+    }
+    .special-card i { font-size: 3rem; color: var(--sun); }
+    .special-card h4 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.3rem;}
+    .special-card p { font-size: 0.9rem; font-weight: 600; color: #666; }
+
+    /* --- LOCANDINA --- */
+    .locandina-box {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: 25px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .locandina-box:hover { transform: scale(1.02); }
+    .locandina-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+    }
+    .download-link {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: var(--sky-dark);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+    .download-link:hover { background: var(--ink); }
+
+    /* --- FORM --- */
+    .form-section { background: linear-gradient(135deg, #E0F2FE 0%, #FFFFFF 100%); }
+    .form-wrapper {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 30px;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+    }
+    .form-title { font-family: var(--font-display); font-size: 2.2rem; margin-bottom: 0.5rem; text-align: center;}
+    .form-subtitle { text-align: center; color: #666; margin-bottom: 2.5rem; font-weight: 600;}
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .input-group { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;}
+    .input-group label { font-weight: 700; color: var(--ink); font-size: 0.9rem;}
+    .input-group input, .input-group select, .input-group textarea {
+      padding: 0.8rem 1.2rem;
+      border: 2px solid #eee;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .input-group input:focus, .input-group select:focus, .input-group textarea:focus { border-color: var(--sky); }
+
+    .consent-box {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .consent-item { display: flex; gap: 1rem; align-items: flex-start; }
+    .consent-item input { margin-top: 0.3rem; transform: scale(1.2); cursor: pointer; }
+    .consent-item label { font-size: 0.9rem; font-weight: 600; color: #444; }
+    .highlight-consent {
+      background: #fffbeb;
+      border: 2px solid var(--sun);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--green);
+      color: var(--white);
+      border: none;
+      padding: 1.2rem;
+      border-radius: 50px;
+      font-size: 1.2rem;
+      font-family: var(--font-display);
+      font-weight: 800;
+      cursor: pointer;
+      margin-top: 2rem;
+      transition: all 0.3s;
+    }
+    .btn-submit:hover { background: var(--green-dark); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+
+    /* Success State */
+    .success-card {
+      display: none;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+    .success-card i { font-size: 5rem; color: var(--green); margin-bottom: 1.5rem; animation: scaleIn 0.5s ease-out; }
+    .success-card h3 { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 1rem; }
+    .contact-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .btn-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      color: var(--white);
+      transition: opacity 0.3s;
+    }
+    .btn-contact.phone { background: var(--green); }
+    .btn-contact.wa { background: #25D366; }
+    .btn-contact:hover { opacity: 0.9; }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.7);
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+    footer h5 { color: var(--white); margin-bottom: 1rem; font-size: 1.2rem; }
+    .footer-links { margin: 1.5rem 0; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;}
+    .footer-links a { color: var(--sky); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+    .socialee { margin-top: 2rem; font-size: 0.8rem; }
+    .socialee a { color: var(--sun); text-decoration: none; font-weight: 700; }
+
+    /* --- COOKIE BANNER --- */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.5rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      border-top: 4px solid var(--sky);
+      z-index: 1000;
+      flex-wrap: wrap;
+    }
+    .cookie-text { flex: 1; font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+    .cookie-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .c-btn {
+      padding: 0.6rem 1.5rem;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 700;
+      border: none;
+      font-family: inherit;
+    }
+    .c-accept { background: var(--sky); color: var(--white); }
+    .c-reject { background: transparent; border: 2px solid rgba(255,255,255,0.2); color: var(--white); }
+    .c-manage { background: transparent; color: rgba(255,255,255,0.6); text-decoration: underline; font-size: 0.8rem; }
+
+    /* --- MODALE COOKIE --- */
+    .modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1001;
+    }
+    .modal-content {
+      background: var(--white);
+      width: 90%;
+      max-width: 500px;
+      padding: 2.5rem;
+      border-radius: 20px;
+      position: relative;
+    }
+    .modal-close { position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 1.5rem;}
+    .toggle-group { display: flex; justify-content: space-between; align-items: center; margin: 1.5rem 0; padding: 1rem; background: #f8fafc; border-radius: 12px; }
+    .toggle-info b { display: block; font-size: 1rem; color: var(--ink); }
+    .toggle-info span { font-size: 0.8rem; color: #666; }
+    .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+    .slider:before { position: absolute; content: ""; height: 18px; width: 18px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+    input:checked + .slider { background-color: var(--sky); }
+    input:checked + .slider:before { transform: translateX(24px); }
+
+    /* --- ANIMATIONS --- */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* --- RESPONSIVE --- */
+    @media (max-width: 768px) {
+      .top-logos { gap: 1rem; }
+      .top-logos img { height: 40px; }
+      .price-strip { gap: 1.5rem; flex-direction: column; }
+      .special-card { flex-direction: column; text-align: center; }
+      .schedule-item { flex-direction: column; text-align: center; gap: 0.5rem; }
+      .schedule-time { min-width: auto; }
+      .form-wrapper { padding: 1.5rem; }
+      .cookie-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+  <!-- structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Campus Estivo Leopardi 2026",
+    "startDate": "2026-06-10",
+    "endDate": "2026-07-31",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Circolo Didattico G. Leopardi",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Foggia",
+        "addressRegion": "FG",
+        "addressCountry": "IT"
+      }
+    },
+    "description": "Sport, musica e creatività per bambini dai 6 agli 11 anni a Foggia.",
+    "organizer": {
+      "@type": "Organization",
+      "name": "Centro Zenith Fisiofit Expert",
+      "url": "[URL del sito]"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- BARRA LOGHI -->
+  <div class="top-logos">
+    <img src="assets/logo-zenith.png" alt="Logo Zenith Fisiofit Expert" onerror="this.style.display='none'">
+    <img src="assets/logo-csain.png" alt="Logo C.S.A.In. Centri Sportivi" onerror="this.style.display='none'">
+    <img src="assets/logo-leopardi.png" alt="Logo XII Circolo Didattico G. Leopardi" onerror="this.style.display='none'">
+  </div>
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-badge">Per bambini dai 6 agli 11 anni</div>
+    <h1>Campus Estivo</h1>
+    <p class="hero-sub">Sport · Musica · Creatività · Avventura</p>
+    <div class="hero-dates">10 Giugno – 31 Luglio 2026</div>
+    <div style="margin-top: 3rem;">
+        <a href="#iscrizione" class="download-link" style="background: var(--sun); color: var(--ink); font-size: 1.2rem; padding: 1.2rem 3rem;">Inizia l'Avventura! 🚀</a>
+    </div>
+  </header>
+
+  <!-- PRICES STRIP -->
+  <div class="price-strip">
+    <div class="price-card">
+      <span class="price-val">€25</span>
+      <span class="price-label">a settimana</span>
+    </div>
+    <div class="price-card">
+      <span class="price-val">€5</span>
+      <span class="price-label">al giorno</span>
+    </div>
+    <div class="price-card">
+      <span class="price-label">Minimo richiesto</span>
+      <span style="font-weight: 800; font-size: 1.4rem;">2 settimane</span>
+    </div>
+    <div class="price-chip">Iscrizioni entro il 30 Maggio</div>
+  </div>
+
+  <!-- PROGRAMMA GIORNALIERO -->
+  <section id="programma">
+    <div class="container">
+      <h2 class="section-title">Programma Giornaliero</h2>
+      <div class="schedule-list">
+        <div class="schedule-item">
+          <i class="fa-solid fa-door-open schedule-icon"></i>
+          <span class="schedule-time">08:30–09:00</span>
+          <span class="schedule-info">Accoglienza dei bambini</span>
+        </div>
+        <div class="schedule-item">
+          <i class="fa-solid fa-futbol schedule-icon"></i>
+          <span class="schedule-time">09:00–10:30</span>
+          <span class="schedule-info">Inizio attività dinamiche</span>
+        </div>
+        <div class="schedule-item">
+          <i class="fa-solid fa-apple-whole schedule-icon"></i>
+          <span class="schedule-time">10:30–11:00</span>
+          <span class="schedule-info">Pausa merenda energetica</span>
+        </div>
+        <div class="schedule-item">
+          <i class="fa-solid fa-paint-brush schedule-icon"></i>
+          <span class="schedule-time">11:00–12:30</span>
+          <span class="schedule-info">Laboratori e Sport</span>
+        </div>
+        <div class="schedule-item">
+          <i class="fa-solid fa-masks-theater schedule-icon"></i>
+          <span class="schedule-time">12:30–13:00</span>
+          <span class="schedule-info">Attività di animazione finale</span>
+        </div>
+        <div class="schedule-item">
+          <i class="fa-solid fa-flag-checkered schedule-icon"></i>
+          <span class="schedule-time">13:00</span>
+          <span class="schedule-info">Fine attività — Arrivederci a domani!</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ATTIVITÀ -->
+  <section class="activities-section">
+    <div class="container">
+      <h2 class="section-title">Sport & Creatività</h2>
+      
+      <!-- Immagine bambini stile disegno sopra la griglia -->
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <img src="https://images.unsplash.com/photo-1472162072142-d540e139ef43?q=80&w=1200&auto=format&fit=crop" 
+             alt="Bambini che giocano e creano" 
+             referrerPolicy="no-referrer"
+             style="width: 100%; max-width: 800px; border-radius: 30px; box-shadow: var(--shadow); filter: sepia(0.1) contrast(1.1);">
+      </div>
+
+      <div class="activity-grid">
+        <div class="activity-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--sky-dark); filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));">
+            <circle cx="50" cy="50" r="40" stroke-dasharray="2 3" />
+            <path d="M50 10 L40 30 L60 30 Z" fill="var(--sky)" opacity="0.3" />
+            <path d="M50 90 L40 70 L60 70 Z" fill="var(--sky)" opacity="0.3" />
+            <path d="M10 50 L30 40 L30 60 Z" fill="var(--sky)" opacity="0.3" />
+            <path d="M90 50 L70 40 L70 60 Z" fill="var(--sky)" opacity="0.3" />
+            <circle cx="50" cy="50" r="10" stroke-width="2" />
+            <path d="M50 40 L50 30 M50 60 L50 70 M40 50 L30 50 M60 50 L70 50" />
+          </svg>
+          <h3>Calcetto</h3>
+        </div>
+
+        <div class="activity-card" style="border-bottom: 5px solid var(--sun);">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #f59e0b;">
+            <path d="M20 30 H80 M25 30 L35 70 M75 30 L65 70 M35 70 H65" stroke-width="4" />
+            <circle cx="75" cy="50" r="15" fill="var(--sun)" opacity="0.4" />
+            <circle cx="75" cy="50" r="15" />
+            <path d="M60 50 H90 M75 35 V65" stroke-width="1.5" />
+          </svg>
+          <h3>Basket</h3>
+        </div>
+
+        <div class="activity-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green);">
+            <path d="M30 80 L40 50 L60 40 L80 20" />
+            <circle cx="85" cy="15" r="5" fill="currentColor" />
+            <path d="M40 50 L20 40 M60 40 L70 70" />
+            <path d="M10 90 H90" stroke="#ccc" stroke-dasharray="4 4" />
+          </svg>
+          <h3>Atletica</h3>
+        </div>
+
+        <div class="activity-card" style="border-bottom: 5px solid var(--coral);">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--coral);">
+            <circle cx="50" cy="50" r="40" />
+            <path d="M15 35 Q50 50 85 35 M15 65 Q50 50 85 65 M50 10 V90" />
+            <path d="M50 50 L10 50 M90 50 L50 50" opacity="0.2" />
+          </svg>
+          <h3>Pallavolo</h3>
+        </div>
+
+        <div class="activity-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--sky);">
+            <path d="M50 80 L30 30 Q50 10 70 30 Z" />
+            <path d="M35 50 H65 M40 65 H60" />
+            <circle cx="50" cy="85" r="8" fill="var(--coral)" stroke="none" />
+            <circle cx="50" cy="85" r="8" />
+          </svg>
+          <h3>Badminton</h3>
+        </div>
+
+        <div class="activity-card" style="border-bottom: 5px solid var(--green);">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--green-dark);">
+            <path d="M70 20 Q90 50 70 80 M70 20 L20 50 L70 80" />
+            <path d="M10 50 H85 M85 50 L75 40 M85 50 L75 60" stroke="var(--coral)" stroke-width="4" />
+            <circle cx="70" cy="50" r="5" fill="currentColor" />
+          </svg>
+          <h3>Tiro con l'Arco</h3>
+        </div>
+
+        <div class="activity-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #a855f7;">
+            <path d="M30 60 Q40 40 50 60 T70 60" stroke-width="5" />
+            <circle cx="30" cy="80" r="8" fill="currentColor" />
+            <circle cx="70" cy="80" r="8" fill="currentColor" />
+            <path d="M40 20 L40 80 M80 20 L80 80 M40 30 H80" stroke-width="5" opacity="0.3" />
+            <path d="M10 10 L20 20 M90 10 L80 20 M50 5 Q55 15 50 25" stroke="#facc15" />
+          </svg>
+          <h3>Balli di Gruppo</h3>
+        </div>
+
+        <div class="activity-card" style="border-bottom: 5px solid var(--sky-dark);">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--sky-dark);">
+            <path d="M20 70 Q10 40 40 20 T80 40 T60 80 Z" fill="#fff" />
+            <circle cx="35" cy="40" r="6" fill="#ff6b6b" stroke="none" />
+            <circle cx="55" cy="35" r="6" fill="#ffd23f" stroke="none" />
+            <circle cx="65" cy="55" r="6" fill="#4caf82" stroke="none" />
+            <path d="M60 20 L90 50 Q95 55 85 65 L55 35 Z" fill="#ddd" />
+          </svg>
+          <h3>Lab Art-Attack</h3>
+        </div>
+      </div>
+
+      <div class="special-cards">
+        <div class="special-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #9333ea; flex-shrink: 0;">
+            <path d="M30 70 Q20 70 20 85 Q20 95 35 95 Q50 95 50 85 V30" />
+            <path d="M50 30 Q70 20 90 30 V50 Q70 40 50 50" fill="#f3e8ff" />
+            <path d="M50 30 Q70 20 90 30" stroke-width="6" />
+          </svg>
+          <div>
+            <h4>Musica dal Vivo</h4>
+            <p>Un musicista professionista guiderà l'esperienza ritmica (1 volta/settimana)</p>
+          </div>
+        </div>
+        <div class="special-card">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: #f59e0b; flex-shrink: 0;">
+            <rect x="35" y="10" width="30" height="80" rx="15" fill="#1e293b" />
+            <circle cx="50" cy="28" r="8" fill="#ef4444" />
+            <circle cx="50" cy="50" r="8" fill="#eab308" />
+            <circle cx="50" cy="72" r="8" fill="#22c55e" />
+            <path d="M50 90 V100" stroke="#334155" stroke-width="5" />
+          </svg>
+          <div>
+            <h4>Educazione Stradale</h4>
+            <p>Laboratori interattivi per imparare le regole della strada (1 volta/settimana)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEZIONE DISEGNI E DECORAZIONI -->
+  <section style="background: var(--white); overflow: hidden;">
+    <div class="container">
+      <div style="display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;">
+          <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Crescere con <span>Allegria</span></h2>
+          <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem;">Il nostro campus non è solo sport: è un viaggio nel mondo della fantasia. Disegno, pittura e laboratori manuali per stimolare la creatività di ogni bambino in un ambiente sicuro e stimolante.</p>
+          <a href="#iscrizione" class="download-link" style="background: var(--green); border: none;">Iscriviti Subito</a>
+        </div>
+        <div style="flex: 1; min-width: 300px; position: relative;">
+          <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?q=80&w=1000&auto=format&fit=crop" 
+               alt="Bambini che giocano all'aperto" 
+               referrerPolicy="no-referrer"
+               style="width: 100%; border-radius: 50% 20% 50% 20%; box-shadow: 20px 20px 0 var(--sun);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM ISCRIZIONE -->
+  <section class="form-section" id="iscrizione">
+    <div class="container" style="max-width: 800px; padding: 0 1rem;">
+      <div class="form-wrapper" id="form-container" style="padding: 1.5rem;">
+        <h2 class="form-title" style="font-size: 1.8rem; margin-bottom: 0.2rem;">Prenota il posto di tuo figlio 🎒</h2>
+        <p class="form-subtitle" style="margin-bottom: 1rem; font-size: 0.85rem;">Iscrizioni aperte · Posti limitati</p>
+        
+        <!-- Form esterno inserito tramite iframe -->
+        <iframe width="540" height="850" src="https://996d0fa4.sibforms.com/serve/MUIFAJE9qIfDQhUc4S6TAuWNij9OyLTAMmTHwLpU_6P1JxjsxTFQTy0Svsh8P4Fx5v7nG5Cgnms7YAC0E4rD9AIlrsfpjZLYOiwQ9Z2nA5we808YAJvXdkgfm1ntUFkXTiH_ttakrOjLOzFSBrWWBcb1t7JrW3qNmoVyPP4PJ-OU0hy-x0zRkn3pDRDMtC92wfiKdKzru-fKpSOq" frameborder="0" scrolling="auto" allowfullscreen style="display: block;margin-left: auto;margin-right: auto;max-width: 100%; border-radius: 10px;"></iframe>
+        
+        <p style="text-align: center; margin-top: 0.5rem; font-weight: 700; font-size: 0.9rem;">Oppure</p>
+        
+        <!-- Pulsante WhatsApp aggiuntivo -->
+        <a href="https://wa.me/393292826417?text=Ciao!%20Vorrei%20prenotare%20un%20posto%20per%20il%20Campus%20Estivo%20Leopardi." 
+           target="_blank" 
+           rel="noopener"
+           style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; background: #25D366; color: white; padding: 0.8rem 1.2rem; border-radius: 50px; text-decoration: none; font-weight: 700; margin-top: 0.5rem; box-shadow: 0 4px 10px rgba(37,211,102,.3); font-size: 0.9rem;">
+           <i class="fa-brands fa-whatsapp"></i>
+           Contattaci su WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <h5>Campus Estivo 2026</h5>
+      <p>Circolo Didattico G. Leopardi · Foggia</p>
+      <p style="font-size: 0.8rem; margin-top: 0.5rem;">In collaborazione con Centro Zenith Fisiofit Expert e C.S.A.In. Centri Sportivi</p>
+      
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="cookie-policy.html">Cookie Policy</a>
+        <a href="javascript:void(0)" onclick="toggleSettings()">Gestisci Cookie</a>
+      </div>
+
+      <div class="socialee">
+        Realizzato da <a href="https://socialee.it" target="_blank" rel="noopener">Socialee</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- COOKIE BANNER -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-text">
+        Utilizziamo cookie per migliorare la tua esperienza. Alcuni sono necessari (tecnici), altri servono per statistiche (analitici) e marketing.
+    </div>
+    <div class="cookie-btns">
+        <button class="c-btn c-reject" onclick="cookieAction('reject')">Rifiuta</button>
+        <button class="c-btn c-accept" onclick="cookieAction('all')">Accetta tutti</button>
+        <button class="c-manage" onclick="toggleSettings()">Gestisci</button>
+    </div>
+  </div>
+
+  <!-- MODALE COOKIE -->
+  <div class="modal" id="cookieSettings">
+    <div class="modal-content">
+        <span class="modal-close" onclick="toggleSettings()">&times;</span>
+        <h3 style="font-family: var(--font-display); margin-bottom: 1.5rem;">Gestione Preferenze</h3>
+        
+        <div class="toggle-group">
+            <div class="toggle-info">
+                <b>Cookie Tecnici</b>
+                <span>Sempre necessari per il funzionamento.</span>
+            </div>
+            <label class="switch"><input type="checkbox" checked disabled><span class="slider"></span></label>
+        </div>
+
+        <div class="toggle-group">
+            <div class="toggle-info">
+                <b>Analitici</b>
+                <span>Per capire come usi il sito (anonimizzati).</span>
+            </div>
+            <label class="switch"><input type="checkbox" id="checkAn"><span class="slider"></span></label>
+        </div>
+
+        <div class="toggle-group">
+            <div class="toggle-info">
+                <b>Marketing</b>
+                <span>Per contenuti e annunci personalizzati.</span>
+            </div>
+            <label class="switch"><input type="checkbox" id="checkMk"><span class="slider"></span></label>
+        </div>
+
+        <button class="btn-submit" style="padding: 0.8rem; margin-top: 1rem;" onclick="cookieAction('save_custom')">Salva Scelte</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // GESTIONE COOKIE
+    window.addEventListener('load', () => {
+        if (!localStorage.getItem('ck_choice')) {
+            document.getElementById('cookieBanner').style.display = 'flex';
+        }
+    });
+
+    function cookieAction(type) {
+        if (type === 'all') {
+            localStorage.setItem('ck_choice', JSON.stringify({tech: true, an: true, mk: true}));
+        } else if (type === 'reject') {
+            localStorage.setItem('ck_choice', JSON.stringify({tech: true, an: false, mk: false}));
+        } else if (type === 'save_custom') {
+            const choice = {
+                tech: true,
+                an: document.getElementById('checkAn').checked,
+                mk: document.getElementById('checkMk').checked
+            };
+            localStorage.setItem('ck_choice', JSON.stringify(choice));
+        }
+        document.getElementById('cookieBanner').style.display = 'none';
+        document.getElementById('cookieSettings').style.display = 'none';
+    }
+
+    function toggleSettings() {
+        const m = document.getElementById('cookieSettings');
+        m.style.display = (m.style.display === 'flex') ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
